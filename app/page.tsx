@@ -109,6 +109,11 @@ const sriLankaPhotos = [
     alt: "Chase excited on safari with elephants in background",
     orientation: "portrait",
   },
+{
+  src: "/images/IMG_3922.jpeg",
+  alt: "Lien pointing at a turtle",
+  orientation: "landscape",
+},
 ]
 
 const glastonburyPhotos = [
