@@ -845,72 +845,72 @@ const parisPhotos = [
 const barcelonaPhotos = [
   {
     src: "/images/barcelona-sagrada-familia.jpeg",
-    alt: "",
+    alt: "Sagrada Familia cathedral in Barcelona",
     orientation: "landscape",
   },
   {
     src: "/images/barcelona-art-installation.jpeg",
-    alt: "",
+    alt: "Art installation in Barcelona",
     orientation: "landscape",
   },
   {
     src: "/images/barcelona-casa-batllo.jpeg",
-    alt: "",
+    alt: "Casa Batlló by Gaudí in Barcelona",
     orientation: "landscape",
   },
   {
     src: "/images/barcelona-polygonal-art.jpeg",
-    alt: "",
+    alt: "Polygonal art in Barcelona",
     orientation: "landscape",
   },
   {
     src: "/images/barcelona-bed.jpeg",
-    alt: "",
+    alt: "Bed in Barcelona accommodation",
     orientation: "landscape",
   },
   {
     src: "/images/barcelona-time-magazine.jpeg",
-    alt: "",
+    alt: "Time magazine in Barcelona",
     orientation: "landscape",
   },
   {
     src: "/images/barcelona-miro-sculpture.jpeg",
-    alt: "",
+    alt: "Joan Miró sculpture in Barcelona",
     orientation: "landscape",
   },
   {
     src: "/images/barcelona-night-lights.jpeg",
-    alt: "",
+    alt: "Night lights in Barcelona",
     orientation: "landscape",
   },
   {
     src: "/images/barcelona-diamonds.jpeg",
-    alt: "",
+    alt: "Diamonds display in Barcelona",
     orientation: "landscape",
   },
   {
     src: "/images/barcelona-cocktail.jpeg",
-    alt: "",
+    alt: "Cocktail in Barcelona",
     orientation: "landscape",
   },
   {
     src: "/images/barcelona-gaudi-tunnel.jpeg",
-    alt: "",
+    alt: "Gaudí tunnel in Barcelona",
     orientation: "landscape",
   },
   {
     src: "/images/barcelona-park-guell.jpeg",
-    alt: "",
+    alt: "Park Güell in Barcelona",
     orientation: "landscape",
   },
   {
     src: "/images/barcelona-caganer-shop.jpeg",
-    alt: "",
+    alt: "Caganer shop in Barcelona",
     orientation: "landscape",
   },
   {
     src: "/images/barcelona-park-guell-dragon.jpeg",
-    alt: "",
+    alt: "Dragon sculpture at Park Güell in Barcelona",
     orientation: "landscape",
   },
 ]
