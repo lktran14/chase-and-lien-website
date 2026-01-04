@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   description: "Highlights from all around the world",
   generator: "v0.app",
   icons: {
-    icon: "/IMG_0195.png",
-    apple: "/IMG_0195.png",
+    icon: "/turtle.svg",
+    apple: "/turtle.svg",
   },
 }
 
