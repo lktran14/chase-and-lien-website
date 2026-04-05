@@ -1,7 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 import { Menu, X, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -20,6 +21,15 @@ const locations = [
   { id: "paris-2024", name: "Paris 2024", active: true },
   { id: "barcelona-2023", name: "Barcelona 2023", active: true },
 ]
+
+const SECTION_LOCATION_IDS = new Set(
+  locations.filter((l) => l.id !== "overview" && l.active).map((l) => l.id),
+)
+
+function locationFromSearchParam(param: string | null): string {
+  if (param && SECTION_LOCATION_IDS.has(param)) return param
+  return "overview"
+}
 
 const antarcticaPhotos = [
   {
@@ -1419,13 +1429,13 @@ const barcelonaPhotos = [
 ]
 
 export default function TravelGallery() {
+  const router = useRouter()
+  const [selectedLocation, setSelectedLocation] = useState("overview")
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [enlargedImage, setEnlargedImage] = useState<{
     src: string
     alt: string
   } | null>(null)
-
-  const [selectedLocation, setSelectedLocation] = useState("overview")
 
   const [carouselIndices, setCarouselIndices] = useState<Record<string, number>>({
     "antarctica-2026": 0,
@@ -1442,6 +1452,25 @@ export default function TravelGallery() {
     "barcelona-2023": 0,
   })
 
+  useEffect(() => {
+    const syncFromUrl = () => {
+      const params = new URLSearchParams(window.location.search)
+      setSelectedLocation(locationFromSearchParam(params.get("location")))
+    }
+    syncFromUrl()
+    window.addEventListener("popstate", syncFromUrl)
+    return () => window.removeEventListener("popstate", syncFromUrl)
+  }, [])
+
+  const navigateToLocation = (id: string) => {
+    setSelectedLocation(id)
+    if (id === "overview") {
+      router.push("/", { scroll: false })
+    } else {
+      router.push(`/?location=${encodeURIComponent(id)}`, { scroll: false })
+    }
+  }
+
   const activeLocations = locations.filter((loc) => loc.active)
   const currentIndex = activeLocations.findIndex((loc) => loc.id === selectedLocation)
   const hasPrev = currentIndex > 0
@@ -1449,13 +1478,13 @@ export default function TravelGallery() {
 
   const navigateToPrev = () => {
     if (hasPrev) {
-      setSelectedLocation(activeLocations[currentIndex - 1].id)
+      navigateToLocation(activeLocations[currentIndex - 1].id)
     }
   }
 
   const navigateToNext = () => {
     if (hasNext) {
-      setSelectedLocation(activeLocations[currentIndex + 1].id)
+      navigateToLocation(activeLocations[currentIndex + 1].id)
     }
   }
 
@@ -1719,7 +1748,7 @@ export default function TravelGallery() {
               <button
                 key={location.id}
                 onClick={() => {
-                  setSelectedLocation(location.id)
+                  navigateToLocation(location.id)
                   setIsSidebarOpen(false)
                 }}
                 disabled={!location.active}
@@ -1747,7 +1776,7 @@ export default function TravelGallery() {
       </aside>
 
       {/* Main Content */}
-      <main className="lg:ml-64 min-h-screen">
+      <main className="lg:ml-64 min-h-screen bg-white">
         <div className="container mx-auto px-4 py-8 lg:py-12 bg-white">
           {currentGallery.isOverview ? (
             <>
@@ -1759,7 +1788,7 @@ export default function TravelGallery() {
               {/* Overview Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
                 {/* Antarctica 2026 */}
-                <button onClick={() => setSelectedLocation("antarctica-2026")} className="group text-left">
+                <button onClick={() => navigateToLocation("antarctica-2026")} className="group text-left">
                   <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
                     <Image
                       src={antarcticaPhotos[carouselIndices["antarctica-2026"]].src || "/placeholder.svg"}
@@ -1809,7 +1838,7 @@ export default function TravelGallery() {
                 </button>
 
                 {/* Buenos Aires 2026 */}
-                <button onClick={() => setSelectedLocation("buenos-aires-2026")} className="group text-left">
+                <button onClick={() => navigateToLocation("buenos-aires-2026")} className="group text-left">
                   <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
                     <Image
                       src={buenosAiresPhotos[carouselIndices["buenos-aires-2026"]].src || "/placeholder.svg"}
@@ -1859,7 +1888,7 @@ export default function TravelGallery() {
                 </button>
 
                 {/* Bilbao 2026 */}
-                <button onClick={() => setSelectedLocation("bilbao-2026")} className="group text-left">
+                <button onClick={() => navigateToLocation("bilbao-2026")} className="group text-left">
                   <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
                     <Image
                       src={bilbaoPhotos[carouselIndices["bilbao-2026"]].src || "/placeholder.svg"}
@@ -1901,7 +1930,7 @@ export default function TravelGallery() {
                 </button>
 
                 {/* Sri Lanka 2025 */}
-                <button onClick={() => setSelectedLocation("sri-lanka-2025")} className="group text-left">
+                <button onClick={() => navigateToLocation("sri-lanka-2025")} className="group text-left">
                   <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
                     <Image
                       src={sriLankaPhotos[carouselIndices["sri-lanka-2025"]].src || "/placeholder.svg"}
@@ -1951,7 +1980,7 @@ export default function TravelGallery() {
                 </button>
 
                 {/* Glastonbury 2025 */}
-                <button onClick={() => setSelectedLocation("glastonbury-2025")} className="group text-left">
+                <button onClick={() => navigateToLocation("glastonbury-2025")} className="group text-left">
                   <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
                     <Image
                       src={glastonburyPhotos[carouselIndices["glastonbury-2025"]].src || "/placeholder.svg"}
@@ -1997,7 +2026,7 @@ export default function TravelGallery() {
                 </button>
 
                 {/* New Zealand 2025 */}
-                <button onClick={() => setSelectedLocation("new-zealand-2025")} className="group text-left">
+                <button onClick={() => navigateToLocation("new-zealand-2025")} className="group text-left">
                   <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
                     <Image
                       src={newZealandPhotos[carouselIndices["new-zealand-2025"]].src || "/placeholder.svg"}
@@ -2039,7 +2068,7 @@ export default function TravelGallery() {
                 </button>
 
                 {/* Dublin 2024 */}
-                <button onClick={() => setSelectedLocation("dublin-2024")} className="group text-left">
+                <button onClick={() => navigateToLocation("dublin-2024")} className="group text-left">
                   <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
                     <Image
                       src={dublinPhotos[carouselIndices["dublin-2024"]].src || "/placeholder.svg"}
@@ -2080,7 +2109,7 @@ export default function TravelGallery() {
                 </button>
 
                 {/* Portugal 2024 */}
-                <button onClick={() => setSelectedLocation("portugal-2024")} className="group text-left">
+                <button onClick={() => navigateToLocation("portugal-2024")} className="group text-left">
                   <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
                     <Image
                       src={portugalPhotos[carouselIndices["portugal-2024"]].src || "/placeholder.svg"}
@@ -2122,7 +2151,7 @@ export default function TravelGallery() {
                 </button>
 
                 {/* Krakow 2024 */}
-                <button onClick={() => setSelectedLocation("krakow-2024")} className="group text-left">
+                <button onClick={() => navigateToLocation("krakow-2024")} className="group text-left">
                   <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
                     <Image
                       src={krakowPhotos[carouselIndices["krakow-2024"]].src || "/placeholder.svg"}
@@ -2163,7 +2192,7 @@ export default function TravelGallery() {
                 </button>
 
                 {/* Greece 2024 */}
-                <button onClick={() => setSelectedLocation("greece-2024")} className="group text-left">
+                <button onClick={() => navigateToLocation("greece-2024")} className="group text-left">
                   <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
                     <Image
                       src={greece2024Photos[carouselIndices["greece-2024"]].src || "/placeholder.svg"}
@@ -2205,7 +2234,7 @@ export default function TravelGallery() {
                 </button>
 
                 {/* Paris 2024 */}
-                <button onClick={() => setSelectedLocation("paris-2024")} className="group text-left">
+                <button onClick={() => navigateToLocation("paris-2024")} className="group text-left">
                   <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
                     <Image
                       src={parisPhotos[carouselIndices["paris-2024"]].src || "/placeholder.svg"}
@@ -2246,7 +2275,7 @@ export default function TravelGallery() {
                 </button>
 
                 {/* Barcelona 2023 */}
-                <button onClick={() => setSelectedLocation("barcelona-2023")} className="group text-left">
+                <button onClick={() => navigateToLocation("barcelona-2023")} className="group text-left">
                   <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
                     <Image
                       src={barcelonaPhotos[carouselIndices["barcelona-2023"]].src || "/placeholder.svg"}
