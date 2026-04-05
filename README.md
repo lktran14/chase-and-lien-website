@@ -77,7 +77,7 @@ chase-and-lien-website/
 ### Prerequisites
 
 - Node.js 18+ 
-- pnpm (or npm/yarn)
+- npm (comes with Node.js)
 
 ### Installation
 
@@ -89,12 +89,12 @@ cd chase-and-lien-website
 
 2. Install dependencies:
 ```bash
-pnpm install
+npm install
 ```
 
 3. Run the development server:
 ```bash
-pnpm dev
+npm run dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
@@ -102,8 +102,8 @@ pnpm dev
 ### Build for Production
 
 ```bash
-pnpm build
-pnpm start
+npm run build
+npm start
 ```
 
 ## 📸 Travel Destinations
@@ -160,10 +160,10 @@ The project includes 50+ shadcn/ui components including:
 
 ## 📝 Scripts
 
-- `pnpm dev` - Start development server
-- `pnpm build` - Build for production
-- `pnpm start` - Start production server
-- `pnpm lint` - Run ESLint
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
 
 ## 🖼️ Image Management
 
