@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/button"
 
 const locations = [
   { id: "overview", name: "Overview", active: true },
-  { id: "bilbao-2026", name: "Bilbao 2026", active: true },
   { id: "buenos-aires-2026", name: "Buenos Aires 2026", active: true },
+  { id: "bilbao-2026", name: "Bilbao 2026", active: true },
   { id: "sri-lanka-2025", name: "Sri Lanka 2025", active: true },
   { id: "glastonbury-2025", name: "Glastonbury 2025", active: true },
   { id: "new-zealand-2025", name: "New Zealand 2025", active: true },
@@ -18,6 +18,104 @@ const locations = [
   { id: "greece-2024", name: "Greece 2024", active: true },
   { id: "paris-2024", name: "Paris 2024", active: true },
   { id: "barcelona-2023", name: "Barcelona 2023", active: true },
+]
+
+const buenosAiresPhotos = [
+  {
+    src: "/images/buenos-aires-2026-05.jpeg",
+    alt: "Couple smiling in the sun at the Floralis Genérica sculpture",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/buenos-aires-2026-01.jpeg",
+    alt: "Choripán from Choripaneria on a wooden board with chimichurri",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/buenos-aires-2026-02.jpeg",
+    alt: "Couple toasting with beer and sangria at a sidewalk café",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/buenos-aires-2026-03.jpeg",
+    alt: "Selfie with the Argentine flag against a bright blue sky",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/buenos-aires-2026-04.jpeg",
+    alt: "Couple in front of a grand gilded bronze door",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/buenos-aires-2026-06.jpeg",
+    alt: "Selfie in front of colourful corrugated houses in La Boca",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/buenos-aires-2026-07.jpeg",
+    alt: "Balconies, dome, and red curtains inside El Ateneo Grand Splendid bookstore",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/buenos-aires-2026-08.jpeg",
+    alt: "Couple toasting with red wine on a sunny rooftop terrace",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/buenos-aires-2026-09.jpeg",
+    alt: "Choripanería Imperial stall with chalk art in a covered market",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/buenos-aires-2026-10.jpeg",
+    alt: "Raising a beer on a cobblestone street at dusk",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/buenos-aires-2026-11.jpeg",
+    alt: "Ornate mausoleums along a path in Recoleta Cemetery",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/buenos-aires-2026-12.jpeg",
+    alt: "Thick steak sandwich with cheese, ham, and tomato held above the plate",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/buenos-aires-2026-13.jpeg",
+    alt: "Pond, columned pergola, and palms in a sunny Buenos Aires park",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/buenos-aires-2026-14.jpeg",
+    alt: "Patagonian mara resting on the grass beside a visitor",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/buenos-aires-2026-15.jpeg",
+    alt: "Patagonian mara sitting on a green lawn",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/buenos-aires-2026-16.jpeg",
+    alt: "Peahen with chicks and a Muscovy duck on a lawn near water",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/buenos-aires-2026-17.jpeg",
+    alt: "Flock of pink flamingos wading in a green pond",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/buenos-aires-2026-18.jpeg",
+    alt: "Red bridge, pond, rocks, and torii gate at the Japanese Garden",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/buenos-aires-2026-19.jpeg",
+    alt: "Japanese-fusion spread on a wooden table at Meiji restaurant",
+    orientation: "landscape",
+  },
 ]
 
 const bilbaoPhotos = [
@@ -145,14 +243,6 @@ const bilbaoPhotos = [
     src: "/images/bilbao-2026-41.jpeg",
     alt: "Large glass of sangria with citrus in a wood-panelled bar (on-screen caption: Someone stop her!!!!)",
     orientation: "portrait",
-  },
-]
-
-const buenosAiresPhotos = [
-  {
-    src: "/placeholder.svg",
-    alt: "Buenos Aires 2026",
-    orientation: "landscape" as const,
   },
 ]
 
@@ -1063,8 +1153,8 @@ export default function TravelGallery() {
   const [selectedLocation, setSelectedLocation] = useState("overview")
 
   const [carouselIndices, setCarouselIndices] = useState<Record<string, number>>({
-    "bilbao-2026": 0,
     "buenos-aires-2026": 0,
+    "bilbao-2026": 0,
     "sri-lanka-2025": 0,
     "glastonbury-2025": 0,
     "new-zealand-2025": 0,
@@ -1103,6 +1193,13 @@ export default function TravelGallery() {
           photos: [],
           isOverview: true,
         }
+      case "buenos-aires-2026":
+        return {
+          title: "Buenos Aires",
+          date: "MARCH 2026",
+          description: "Enough steak sandwiches to need a nap.",
+          photos: buenosAiresPhotos,
+        }
       case "bilbao-2026":
         return {
           title: "Bilbao",
@@ -1110,13 +1207,6 @@ export default function TravelGallery() {
           description:
             "Guggenheim galleries, pintxos bars, and the Basque Country good life.",
           photos: bilbaoPhotos,
-        }
-      case "buenos-aires-2026":
-        return {
-          title: "Buenos Aires",
-          date: "MARCH 2026",
-          description: "Photos coming soon.",
-          photos: buenosAiresPhotos,
         }
       case "sri-lanka-2025":
         return {
@@ -1209,6 +1299,13 @@ export default function TravelGallery() {
     }
 
     switch (locationId) {
+      case "buenos-aires-2026":
+        return {
+          title: "Buenos Aires",
+          date: "MARCH 2026",
+          description: "Enough steak sandwiches to need a nap.",
+          photos: buenosAiresPhotos,
+        }
       case "bilbao-2026":
         return {
           title: "Bilbao",
@@ -1216,13 +1313,6 @@ export default function TravelGallery() {
           description:
             "Guggenheim galleries, pintxos bars, and the Basque Country good life.",
           photos: bilbaoPhotos,
-        }
-      case "buenos-aires-2026":
-        return {
-          title: "Buenos Aires",
-          date: "MARCH 2026",
-          description: "Photos coming soon.",
-          photos: buenosAiresPhotos,
         }
       case "sri-lanka-2025":
         return {
@@ -1378,6 +1468,54 @@ export default function TravelGallery() {
 
               {/* Overview Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
+                {/* Buenos Aires 2026 */}
+                <button onClick={() => setSelectedLocation("buenos-aires-2026")} className="group text-left">
+                  <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
+                    <Image
+                      src={buenosAiresPhotos[carouselIndices["buenos-aires-2026"]].src || "/placeholder.svg"}
+                      alt="Buenos Aires 2026"
+                      fill
+                      className={`object-cover transition-transform duration-500 group-hover:scale-105 ${
+                        buenosAiresPhotos[carouselIndices["buenos-aires-2026"]].orientation === "portrait"
+                          ? "object-top"
+                          : ""
+                      }`}
+                    />
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setCarouselIndices((prev) => ({
+                          ...prev,
+                          "buenos-aires-2026":
+                            prev["buenos-aires-2026"] === 0
+                              ? buenosAiresPhotos.length - 1
+                              : prev["buenos-aires-2026"] - 1,
+                        }))
+                      }}
+                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all z-10"
+                      aria-label="Previous photo"
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setCarouselIndices((prev) => ({
+                          ...prev,
+                          "buenos-aires-2026": (prev["buenos-aires-2026"] + 1) % buenosAiresPhotos.length,
+                        }))
+                      }}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all z-10"
+                      aria-label="Next photo"
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                  <h3 className="text-lg font-medium text-foreground group-hover:text-foreground/70 transition-colors">
+                    Buenos Aires 2026
+                  </h3>
+                </button>
+
                 {/* Bilbao 2026 */}
                 <button onClick={() => setSelectedLocation("bilbao-2026")} className="group text-left">
                   <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
@@ -1417,50 +1555,6 @@ export default function TravelGallery() {
                   </div>
                   <h3 className="text-lg font-medium text-foreground group-hover:text-foreground/70 transition-colors">
                     Bilbao 2026
-                  </h3>
-                </button>
-
-                {/* Buenos Aires 2026 */}
-                <button onClick={() => setSelectedLocation("buenos-aires-2026")} className="group text-left">
-                  <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
-                    <Image
-                      src={buenosAiresPhotos[carouselIndices["buenos-aires-2026"]].src || "/placeholder.svg"}
-                      alt="Buenos Aires 2026"
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        setCarouselIndices((prev) => ({
-                          ...prev,
-                          "buenos-aires-2026":
-                            prev["buenos-aires-2026"] === 0
-                              ? buenosAiresPhotos.length - 1
-                              : prev["buenos-aires-2026"] - 1,
-                        }))
-                      }}
-                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all z-10"
-                      aria-label="Previous photo"
-                    >
-                      <ChevronLeft className="h-4 w-4" />
-                    </button>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        setCarouselIndices((prev) => ({
-                          ...prev,
-                          "buenos-aires-2026": (prev["buenos-aires-2026"] + 1) % buenosAiresPhotos.length,
-                        }))
-                      }}
-                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all z-10"
-                      aria-label="Next photo"
-                    >
-                      <ChevronRight className="h-4 w-4" />
-                    </button>
-                  </div>
-                  <h3 className="text-lg font-medium text-foreground group-hover:text-foreground/70 transition-colors">
-                    Buenos Aires 2026
                   </h3>
                 </button>
 
