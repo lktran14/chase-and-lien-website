@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 
 const locations = [
   { id: "overview", name: "Overview", active: true },
+  { id: "bilbao-2026", name: "Bilbao 2026", active: true },
   { id: "sri-lanka-2025", name: "Sri Lanka 2025", active: true },
   { id: "glastonbury-2025", name: "Glastonbury 2025", active: true },
   { id: "new-zealand-2025", name: "New Zealand 2025", active: true },
@@ -16,6 +17,14 @@ const locations = [
   { id: "greece-2024", name: "Greece 2024", active: true },
   { id: "paris-2024", name: "Paris 2024", active: true },
   { id: "barcelona-2023", name: "Barcelona 2023", active: true },
+]
+
+const bilbaoPhotos = [
+  {
+    src: "/placeholder.svg",
+    alt: "Bilbao 2026 — photos coming soon",
+    orientation: "landscape" as const,
+  },
 ]
 
 const sriLankaPhotos = [
@@ -925,6 +934,7 @@ export default function TravelGallery() {
   const [selectedLocation, setSelectedLocation] = useState("overview")
 
   const [carouselIndices, setCarouselIndices] = useState<Record<string, number>>({
+    "bilbao-2026": 0,
     "sri-lanka-2025": 0,
     "glastonbury-2025": 0,
     "new-zealand-2025": 0,
@@ -962,6 +972,13 @@ export default function TravelGallery() {
           description: "Highlights from around the world",
           photos: [],
           isOverview: true,
+        }
+      case "bilbao-2026":
+        return {
+          title: "Bilbao",
+          date: "2026",
+          description: "Basque country, pintxos, and the Guggenheim — photos to follow.",
+          photos: bilbaoPhotos,
         }
       case "sri-lanka-2025":
         return {
@@ -1054,6 +1071,13 @@ export default function TravelGallery() {
     }
 
     switch (locationId) {
+      case "bilbao-2026":
+        return {
+          title: "Bilbao",
+          date: "2026",
+          description: "Basque country, pintxos, and the Guggenheim — photos to follow.",
+          photos: bilbaoPhotos,
+        }
       case "sri-lanka-2025":
         return {
           title: "Sri Lanka",
@@ -1208,6 +1232,48 @@ export default function TravelGallery() {
 
               {/* Overview Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
+                {/* Bilbao 2026 */}
+                <button onClick={() => setSelectedLocation("bilbao-2026")} className="group text-left">
+                  <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
+                    <Image
+                      src={bilbaoPhotos[carouselIndices["bilbao-2026"]].src || "/placeholder.svg"}
+                      alt="Bilbao 2026"
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setCarouselIndices((prev) => ({
+                          ...prev,
+                          "bilbao-2026":
+                            prev["bilbao-2026"] === 0 ? bilbaoPhotos.length - 1 : prev["bilbao-2026"] - 1,
+                        }))
+                      }}
+                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all z-10"
+                      aria-label="Previous photo"
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setCarouselIndices((prev) => ({
+                          ...prev,
+                          "bilbao-2026": (prev["bilbao-2026"] + 1) % bilbaoPhotos.length,
+                        }))
+                      }}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all z-10"
+                      aria-label="Next photo"
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                  <h3 className="text-lg font-medium text-foreground group-hover:text-foreground/70 transition-colors">
+                    Bilbao 2026
+                  </h3>
+                </button>
+
                 {/* Sri Lanka 2025 */}
                 <button onClick={() => setSelectedLocation("sri-lanka-2025")} className="group text-left">
                   <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
