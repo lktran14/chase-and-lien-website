@@ -1477,7 +1477,9 @@ export default function TravelGallery() {
                       fill
                       className={`object-cover transition-transform duration-500 group-hover:scale-105 ${
                         buenosAiresPhotos[carouselIndices["buenos-aires-2026"]].orientation === "portrait"
-                          ? "object-top"
+                          ? carouselIndices["buenos-aires-2026"] === 0
+                            ? "object-[center_30%]"
+                            : "object-top"
                           : ""
                       }`}
                     />
