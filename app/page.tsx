@@ -23,6 +23,11 @@ const locations = [
 
 const antarcticaPhotos = [
   {
+    src: "/images/antarctica-2026-23.jpeg",
+    alt: "Antarctica expedition — DSC 0633",
+    orientation: "portrait",
+  },
+  {
     src: "/images/antarctica-2026-01.jpeg",
     alt: "Polar plunge in icy Antarctic water",
     orientation: "landscape",
@@ -131,11 +136,6 @@ const antarcticaPhotos = [
     src: "/images/antarctica-2026-22.jpeg",
     alt: "Antarctica expedition — DSC 0513",
     orientation: "landscape",
-  },
-  {
-    src: "/images/antarctica-2026-23.jpeg",
-    alt: "Antarctica expedition — DSC 0633",
-    orientation: "portrait",
   },
   {
     src: "/images/antarctica-2026-24.jpeg",
@@ -1765,7 +1765,13 @@ export default function TravelGallery() {
                       src={antarcticaPhotos[carouselIndices["antarctica-2026"]].src || "/placeholder.svg"}
                       alt="Antarctica 2026"
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className={`object-cover transition-transform duration-500 group-hover:scale-105 ${
+                        antarcticaPhotos[carouselIndices["antarctica-2026"]].orientation === "portrait"
+                          ? carouselIndices["antarctica-2026"] === 0
+                            ? "object-[56%_92%]"
+                            : "object-top"
+                          : ""
+                      }`}
                     />
                     <button
                       onClick={(e) => {
