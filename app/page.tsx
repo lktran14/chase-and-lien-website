@@ -1502,7 +1502,7 @@ export default function TravelGallery() {
         return {
           title: "Antarctica",
           date: "MARCH 2026",
-          description: "The white continent.",
+          description: "One marathon, one engagement and hundreds of penguins.",
           photos: antarcticaPhotos,
         }
       case "buenos-aires-2026":
@@ -1615,7 +1615,7 @@ export default function TravelGallery() {
         return {
           title: "Antarctica",
           date: "MARCH 2026",
-          description: "The white continent.",
+          description: "One marathon, one engagement and hundreds of penguins.",
           photos: antarcticaPhotos,
         }
       case "buenos-aires-2026":
