@@ -21,9 +21,139 @@ const locations = [
 
 const bilbaoPhotos = [
   {
-    src: "/placeholder.svg",
-    alt: "Bilbao 2026 — photos coming soon",
-    orientation: "landscape" as const,
+    src: "/images/bilbao-2026-11.jpeg",
+    alt: "Pintxos plate with jamón, avocado toast, and cherry tomatoes",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/bilbao-2026-01.jpeg",
+    alt: "Lien smiling with a large sangria in a wood-panelled bar",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/bilbao-2026-02.jpeg",
+    alt: "Bilbao tourism flyer held up in front of the Maman spider and La Salve Bridge",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/bilbao-2026-03.jpeg",
+    alt: "Lucio Fontana slashed canvas in a gallery",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/bilbao-2026-05.jpeg",
+    alt: "Guggenheim Bilbao seen through a café window with diners in the foreground",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/bilbao-2026-06.jpeg",
+    alt: "Grilled chipirones on a long ceramic plate",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/bilbao-2026-07.jpeg",
+    alt: "Gallery installation with chairs, straw, and living grass",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/bilbao-2026-08.jpeg",
+    alt: "Glowing pink and purple jellyfish in deep blue water",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/bilbao-2026-09.jpeg",
+    alt: "Grilled squid and jamón ibérico pintxos on a restaurant table",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/bilbao-2026-10.jpeg",
+    alt: "Couple selfie in front of Richard Serra’s weathered steel curves",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/bilbao-2026-12.jpeg",
+    alt: "Richard Serra’s The Matter of Time seen from above in the Guggenheim",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/bilbao-2026-13.jpeg",
+    alt: "Smiling in a curving Corten steel corridor at the Guggenheim",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/bilbao-2026-14.jpeg",
+    alt: "Couple with Jeff Koons’ flower Puppy outside the Guggenheim",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/bilbao-2026-15.jpeg",
+    alt: "Jenny Holzer installation with red LED pillars reflected on the floor",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/bilbao-2026-16.jpeg",
+    alt: "Breakfast at a café table with the Guggenheim visible through the windows",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/bilbao-2026-17.jpeg",
+    alt: "Celebrating in front of Maman, the Guggenheim, and La Salve Bridge",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/bilbao-2026-18.jpeg",
+    alt: "Selfie in front of Jeff Koons’ Puppy sculpture at the Guggenheim",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/bilbao-2026-19.jpeg",
+    alt: "Museum gallery with a grass mound, trees in planters, and visitors",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/bilbao-2026-20.jpeg",
+    alt: "Nervión riverfront with Ribera Market, colourful façades, and San Antón Bridge",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/bilbao-2026-21.jpeg",
+    alt: "Standing under Louise Bourgeois’ Maman with La Salve Bridge behind",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/bilbao-2026-22.jpeg",
+    alt: "Guggenheim Bilbao’s titanium and stone architecture from above",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/bilbao-2026-23.jpeg",
+    alt: "Anish Kapoor’s Tall Tree and the Eye mirrored spheres at the Guggenheim",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/bilbao-2026-24.jpeg",
+    alt: "Jamón ibérico on toasted bread pintxos on a metal tray",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/bilbao-2026-25.jpeg",
+    alt: "Classic Gilda pintxos with olive, anchovy, and guindilla",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/bilbao-2026-26.jpeg",
+    alt: "Grilled prawns, beer, and an orange drink at a pintxos bar",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/bilbao-2026-27.jpeg",
+    alt: "Traditional pintxos bar with marble counter, wine barrels, and hanging glassware",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/bilbao-2026-28.jpeg",
+    alt: "Jean-Michel Basquiat painting in the museum galleries",
+    orientation: "landscape",
   },
 ]
 
@@ -976,8 +1106,9 @@ export default function TravelGallery() {
       case "bilbao-2026":
         return {
           title: "Bilbao",
-          date: "2026",
-          description: "Basque country, pintxos, and the Guggenheim — photos to follow.",
+          date: "JANUARY 2026",
+          description:
+            "Guggenheim galleries, pintxos bars, and the Basque Country good life.",
           photos: bilbaoPhotos,
         }
       case "sri-lanka-2025":
@@ -1074,8 +1205,9 @@ export default function TravelGallery() {
       case "bilbao-2026":
         return {
           title: "Bilbao",
-          date: "2026",
-          description: "Basque country, pintxos, and the Guggenheim — photos to follow.",
+          date: "JANUARY 2026",
+          description:
+            "Guggenheim galleries, pintxos bars, and the Basque Country good life.",
           photos: bilbaoPhotos,
         }
       case "sri-lanka-2025":
