@@ -23,11 +23,277 @@ const locations = [
 
 const antarcticaPhotos = [
   {
-    src: "/placeholder.svg",
-    alt: "Antarctica 2026 — photos coming soon",
-    orientation: "landscape" as const,
+    src: "/images/antarctica-2026-01.jpeg",
+    alt: "Polar plunge in icy Antarctic water",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-02.jpeg",
+    alt: "Antarctica expedition — DSC 0071",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-03.jpeg",
+    alt: "Antarctica expedition — DSC 0097",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-04.jpeg",
+    alt: "Antarctica expedition — DSC 0155",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-05.jpeg",
+    alt: "Antarctica expedition — DSC 0177",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-06.jpeg",
+    alt: "Antarctica expedition — DSC 0222",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-07.jpeg",
+    alt: "Antarctica expedition — DSC 0229",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-08.jpeg",
+    alt: "Antarctica expedition — DSC 0250",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-09.jpeg",
+    alt: "Antarctica expedition — DSC 0255",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-10.jpeg",
+    alt: "Antarctica expedition — DSC 0295",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/antarctica-2026-11.jpeg",
+    alt: "Antarctica expedition — DSC 0330",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-12.jpeg",
+    alt: "Antarctica expedition — DSC 0342",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-13.jpeg",
+    alt: "Antarctica expedition — DSC 0370",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-14.jpeg",
+    alt: "Antarctica expedition — DSC 0375",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-15.jpeg",
+    alt: "Antarctica expedition — DSC 0376",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-16.jpeg",
+    alt: "Antarctica expedition — DSC 0377",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-17.jpeg",
+    alt: "Antarctica expedition — DSC 0381",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-18.jpeg",
+    alt: "Antarctica expedition — DSC 0403",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-19.jpeg",
+    alt: "Antarctica expedition — DSC 0405",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-20.jpeg",
+    alt: "Antarctica expedition — DSC 0406",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-21.jpeg",
+    alt: "Antarctica expedition — DSC 0407",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-22.jpeg",
+    alt: "Antarctica expedition — DSC 0513",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-23.jpeg",
+    alt: "Antarctica expedition — DSC 0633",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/antarctica-2026-24.jpeg",
+    alt: "Antarctica expedition — DSC 0671",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/antarctica-2026-25.jpeg",
+    alt: "Antarctica expedition — DSC 0689",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-26.jpeg",
+    alt: "Antarctica expedition — DSC 0695",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-27.jpeg",
+    alt: "Antarctica expedition — IMG 5754",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/antarctica-2026-28.jpeg",
+    alt: "Antarctica expedition — IMG 5755",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/antarctica-2026-29.jpeg",
+    alt: "Antarctica expedition — IMG 5756",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/antarctica-2026-30.jpeg",
+    alt: "Antarctica expedition — IMG 5759",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-31.jpeg",
+    alt: "Antarctica expedition — IMG 5761",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-32.jpeg",
+    alt: "Antarctica expedition — IMG 5767",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-33.jpeg",
+    alt: "Antarctica expedition — IMG 5802",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/antarctica-2026-34.jpeg",
+    alt: "Antarctica expedition — IMG 5812",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-35.jpeg",
+    alt: "Antarctica expedition — IMG 5865",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/antarctica-2026-36.jpeg",
+    alt: "Antarctica expedition — IMG 5890",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-37.jpeg",
+    alt: "Antarctica expedition — IMG 5910",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-38.jpeg",
+    alt: "Antarctica expedition — IMG 5928",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-39.jpeg",
+    alt: "Antarctica expedition — IMG 5966",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/antarctica-2026-40.jpeg",
+    alt: "Antarctica expedition — IMG 5996",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-41.jpeg",
+    alt: "Antarctica expedition — IMG 6010",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-42.jpeg",
+    alt: "Antarctica expedition — IMG 6056",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-43.jpeg",
+    alt: "Antarctica expedition — IMG 6091",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-44.jpeg",
+    alt: "Antarctica expedition — IMG 6211",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/antarctica-2026-45.jpeg",
+    alt: "Antarctica expedition — IMG 6231",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-46.jpeg",
+    alt: "Antarctica expedition — IMG 6296",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-47.jpeg",
+    alt: "Antarctica expedition — IMG 6311",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-48.jpeg",
+    alt: "Antarctica expedition — IMG 6357",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-49.jpeg",
+    alt: "Antarctica moment (Snapchat)",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/antarctica-2026-50.jpeg",
+    alt: "Antarctica expedition photo",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/antarctica-2026-51.jpeg",
+    alt: "Antarctica expedition photo",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-52.jpeg",
+    alt: "Antarctica expedition photo",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/antarctica-2026-53.jpeg",
+    alt: "Antarctica expedition photo",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/antarctica-2026-54.jpeg",
+    alt: "Antarctica expedition photo",
+    orientation: "landscape",
   },
 ]
+
 
 const buenosAiresPhotos = [
   {
