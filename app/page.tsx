@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 const locations = [
   { id: "overview", name: "Overview", active: true },
   { id: "bilbao-2026", name: "Bilbao 2026", active: true },
+  { id: "buenos-aires-2026", name: "Buenos Aires 2026", active: true },
   { id: "sri-lanka-2025", name: "Sri Lanka 2025", active: true },
   { id: "glastonbury-2025", name: "Glastonbury 2025", active: true },
   { id: "new-zealand-2025", name: "New Zealand 2025", active: true },
@@ -144,6 +145,14 @@ const bilbaoPhotos = [
     src: "/images/bilbao-2026-41.jpeg",
     alt: "Large glass of sangria with citrus in a wood-panelled bar (on-screen caption: Someone stop her!!!!)",
     orientation: "portrait",
+  },
+]
+
+const buenosAiresPhotos = [
+  {
+    src: "/placeholder.svg",
+    alt: "Buenos Aires 2026",
+    orientation: "landscape" as const,
   },
 ]
 
@@ -1055,6 +1064,7 @@ export default function TravelGallery() {
 
   const [carouselIndices, setCarouselIndices] = useState<Record<string, number>>({
     "bilbao-2026": 0,
+    "buenos-aires-2026": 0,
     "sri-lanka-2025": 0,
     "glastonbury-2025": 0,
     "new-zealand-2025": 0,
@@ -1100,6 +1110,13 @@ export default function TravelGallery() {
           description:
             "Guggenheim galleries, pintxos bars, and the Basque Country good life.",
           photos: bilbaoPhotos,
+        }
+      case "buenos-aires-2026":
+        return {
+          title: "Buenos Aires",
+          date: "MARCH 2026",
+          description: "Photos coming soon.",
+          photos: buenosAiresPhotos,
         }
       case "sri-lanka-2025":
         return {
@@ -1199,6 +1216,13 @@ export default function TravelGallery() {
           description:
             "Guggenheim galleries, pintxos bars, and the Basque Country good life.",
           photos: bilbaoPhotos,
+        }
+      case "buenos-aires-2026":
+        return {
+          title: "Buenos Aires",
+          date: "MARCH 2026",
+          description: "Photos coming soon.",
+          photos: buenosAiresPhotos,
         }
       case "sri-lanka-2025":
         return {
@@ -1393,6 +1417,50 @@ export default function TravelGallery() {
                   </div>
                   <h3 className="text-lg font-medium text-foreground group-hover:text-foreground/70 transition-colors">
                     Bilbao 2026
+                  </h3>
+                </button>
+
+                {/* Buenos Aires 2026 */}
+                <button onClick={() => setSelectedLocation("buenos-aires-2026")} className="group text-left">
+                  <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
+                    <Image
+                      src={buenosAiresPhotos[carouselIndices["buenos-aires-2026"]].src || "/placeholder.svg"}
+                      alt="Buenos Aires 2026"
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setCarouselIndices((prev) => ({
+                          ...prev,
+                          "buenos-aires-2026":
+                            prev["buenos-aires-2026"] === 0
+                              ? buenosAiresPhotos.length - 1
+                              : prev["buenos-aires-2026"] - 1,
+                        }))
+                      }}
+                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all z-10"
+                      aria-label="Previous photo"
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setCarouselIndices((prev) => ({
+                          ...prev,
+                          "buenos-aires-2026": (prev["buenos-aires-2026"] + 1) % buenosAiresPhotos.length,
+                        }))
+                      }}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all z-10"
+                      aria-label="Next photo"
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                  <h3 className="text-lg font-medium text-foreground group-hover:text-foreground/70 transition-colors">
+                    Buenos Aires 2026
                   </h3>
                 </button>
 
