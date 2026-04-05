@@ -26,28 +26,13 @@ const bilbaoPhotos = [
     orientation: "landscape",
   },
   {
-    src: "/images/bilbao-2026-01.jpeg",
-    alt: "Lien smiling with a large sangria in a wood-panelled bar",
-    orientation: "portrait",
-  },
-  {
-    src: "/images/bilbao-2026-02.jpeg",
-    alt: "Bilbao tourism flyer held up in front of the Maman spider and La Salve Bridge",
-    orientation: "portrait",
-  },
-  {
     src: "/images/bilbao-2026-03.jpeg",
     alt: "Lucio Fontana slashed canvas in a gallery",
     orientation: "portrait",
   },
   {
-    src: "/images/bilbao-2026-05.jpeg",
-    alt: "Guggenheim Bilbao seen through a café window with diners in the foreground",
-    orientation: "landscape",
-  },
-  {
-    src: "/images/bilbao-2026-06.jpeg",
-    alt: "Grilled chipirones on a long ceramic plate",
+    src: "/images/bilbao-2026-29.jpeg",
+    alt: "Jamón ibérico pintxos on a perforated tray at a pintxos bar",
     orientation: "portrait",
   },
   {
@@ -56,19 +41,19 @@ const bilbaoPhotos = [
     orientation: "landscape",
   },
   {
+    src: "/images/bilbao-2026-30.jpeg",
+    alt: "Grilled chipirones with chives on a long rectangular ceramic plate",
+    orientation: "portrait",
+  },
+  {
     src: "/images/bilbao-2026-08.jpeg",
     alt: "Glowing pink and purple jellyfish in deep blue water",
     orientation: "portrait",
   },
   {
-    src: "/images/bilbao-2026-09.jpeg",
-    alt: "Grilled squid and jamón ibérico pintxos on a restaurant table",
-    orientation: "portrait",
-  },
-  {
-    src: "/images/bilbao-2026-10.jpeg",
-    alt: "Couple selfie in front of Richard Serra’s weathered steel curves",
-    orientation: "portrait",
+    src: "/images/bilbao-2026-31.jpeg",
+    alt: "Guggenheim Bilbao’s titanium curves and stone wings from above, with hills beyond",
+    orientation: "landscape",
   },
   {
     src: "/images/bilbao-2026-12.jpeg",
@@ -76,18 +61,8 @@ const bilbaoPhotos = [
     orientation: "portrait",
   },
   {
-    src: "/images/bilbao-2026-13.jpeg",
-    alt: "Smiling in a curving Corten steel corridor at the Guggenheim",
-    orientation: "portrait",
-  },
-  {
-    src: "/images/bilbao-2026-14.jpeg",
-    alt: "Couple with Jeff Koons’ flower Puppy outside the Guggenheim",
-    orientation: "portrait",
-  },
-  {
-    src: "/images/bilbao-2026-15.jpeg",
-    alt: "Jenny Holzer installation with red LED pillars reflected on the floor",
+    src: "/images/bilbao-2026-32.jpeg",
+    alt: "Couple with Jeff Koons’ flower Puppy and the Guggenheim titanium façade",
     orientation: "portrait",
   },
   {
@@ -96,13 +71,8 @@ const bilbaoPhotos = [
     orientation: "landscape",
   },
   {
-    src: "/images/bilbao-2026-17.jpeg",
-    alt: "Celebrating in front of Maman, the Guggenheim, and La Salve Bridge",
-    orientation: "landscape",
-  },
-  {
-    src: "/images/bilbao-2026-18.jpeg",
-    alt: "Selfie in front of Jeff Koons’ Puppy sculpture at the Guggenheim",
+    src: "/images/bilbao-2026-33.jpeg",
+    alt: "Couple selfie in front of Jeff Koons’ Puppy outside the Guggenheim",
     orientation: "portrait",
   },
   {
@@ -111,19 +81,19 @@ const bilbaoPhotos = [
     orientation: "landscape",
   },
   {
+    src: "/images/bilbao-2026-34.jpeg",
+    alt: "Smiling in front of Louise Bourgeois’ Maman with La Salve Bridge behind",
+    orientation: "portrait",
+  },
+  {
     src: "/images/bilbao-2026-20.jpeg",
     alt: "Nervión riverfront with Ribera Market, colourful façades, and San Antón Bridge",
     orientation: "landscape",
   },
   {
-    src: "/images/bilbao-2026-21.jpeg",
-    alt: "Standing under Louise Bourgeois’ Maman with La Salve Bridge behind",
+    src: "/images/bilbao-2026-35.jpeg",
+    alt: "Bilbao Refoto 93 flyer held up with Maman and La Salve Bridge behind",
     orientation: "portrait",
-  },
-  {
-    src: "/images/bilbao-2026-22.jpeg",
-    alt: "Guggenheim Bilbao’s titanium and stone architecture from above",
-    orientation: "landscape",
   },
   {
     src: "/images/bilbao-2026-23.jpeg",
@@ -131,8 +101,8 @@ const bilbaoPhotos = [
     orientation: "portrait",
   },
   {
-    src: "/images/bilbao-2026-24.jpeg",
-    alt: "Jamón ibérico on toasted bread pintxos on a metal tray",
+    src: "/images/bilbao-2026-36.jpeg",
+    alt: "Couple selfie inside Richard Serra’s weathered steel curves at the Guggenheim",
     orientation: "portrait",
   },
   {
@@ -141,9 +111,19 @@ const bilbaoPhotos = [
     orientation: "landscape",
   },
   {
+    src: "/images/bilbao-2026-37.jpeg",
+    alt: "Smiling in a curving Corten steel corridor at the Guggenheim",
+    orientation: "portrait",
+  },
+  {
     src: "/images/bilbao-2026-26.jpeg",
     alt: "Grilled prawns, beer, and an orange drink at a pintxos bar",
     orientation: "portrait",
+  },
+  {
+    src: "/images/bilbao-2026-38.jpeg",
+    alt: "Couple cheering under Louise Bourgeois’ Maman by the Nervión promenade",
+    orientation: "landscape",
   },
   {
     src: "/images/bilbao-2026-27.jpeg",
@@ -151,9 +131,19 @@ const bilbaoPhotos = [
     orientation: "landscape",
   },
   {
-    src: "/images/bilbao-2026-28.jpeg",
-    alt: "Jean-Michel Basquiat painting in the museum galleries",
-    orientation: "landscape",
+    src: "/images/bilbao-2026-39.jpeg",
+    alt: "Jenny Holzer’s red LED pillars reflected on the floor at the Guggenheim Bilbao",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/bilbao-2026-40.jpeg",
+    alt: "Grilled chipirones and jamón pintxos on two plates at a restaurant table",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/bilbao-2026-41.jpeg",
+    alt: "Large glass of sangria with citrus in a wood-panelled bar (on-screen caption: Someone stop her!!!!)",
+    orientation: "portrait",
   },
 ]
 
