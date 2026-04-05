@@ -1462,12 +1462,16 @@ export default function TravelGallery() {
     return () => window.removeEventListener("popstate", syncFromUrl)
   }, [])
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [selectedLocation])
+
   const navigateToLocation = (id: string) => {
     setSelectedLocation(id)
     if (id === "overview") {
-      router.push("/", { scroll: false })
+      router.push("/")
     } else {
-      router.push(`/?location=${encodeURIComponent(id)}`, { scroll: false })
+      router.push(`/?location=${encodeURIComponent(id)}`)
     }
   }
 
@@ -2351,7 +2355,7 @@ export default function TravelGallery() {
               <div className="columns-1 md:columns-2 lg:columns-3 gap-2">
                 {currentGallery.photos.map((photo, index) => (
                   <div
-                    key={index}
+                    key={`${selectedLocation}-${photo.src}`}
                     className={`relative overflow-hidden bg-muted group mb-2 break-inside-avoid ${
                       selectedLocation !== "overview" ? "cursor-pointer" : ""
                     }`}
@@ -2366,6 +2370,7 @@ export default function TravelGallery() {
                       alt={photo.alt}
                       width={800}
                       height={photo.orientation === "portrait" ? 1200 : 600}
+                      loading="eager"
                       className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
