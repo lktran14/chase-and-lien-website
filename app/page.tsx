@@ -1438,7 +1438,7 @@ export default function TravelGallery() {
   } | null>(null)
 
   const [carouselIndices, setCarouselIndices] = useState<Record<string, number>>({
-    "antarctica-2026": 0,
+    "antarctica-2026": 50,
     "buenos-aires-2026": 0,
     "bilbao-2026": 0,
     "sri-lanka-2025": 0,
