@@ -536,7 +536,78 @@ const florencePhotos: {
   src: string
   alt: string
   orientation: "portrait" | "landscape"
-}[] = []
+}[] = [
+  {
+    src: "/images/florence-2026-12.jpeg",
+    alt: "Chase and Lien overlooking Florence from Piazzale Michelangelo",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/florence-2026-02.jpeg",
+    alt: "Chase and Lien holding up the Leaning Tower of Pisa",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/florence-2026-03.jpeg",
+    alt: "Chase and a friend posing with the Leaning Tower of Pisa",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/florence-2026-04.jpeg",
+    alt: "Chase and Lien in front of Keith Haring's Tuttomondo mural in Pisa",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/florence-2026-05.jpeg",
+    alt: "Marble relief sculpture on a Florentine monument",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/florence-2026-06.jpeg",
+    alt: "Botticelli's Birth of Venus at the Uffizi Gallery",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/florence-2026-07.jpeg",
+    alt: "Marble statue of a kneeling figure pointing skyward",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/florence-2026-08.jpeg",
+    alt: "Chase outside a Florence wine window at night",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/florence-2026-09.jpeg",
+    alt: "Chase and Lien under the dome of the Medici Chapel",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/florence-2026-10.jpeg",
+    alt: "Chase with Leonardo da Vinci's self-supporting bridge model",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/florence-2026-11.jpeg",
+    alt: "Marble statue of a kneeling youth with arm raised",
+    orientation: "portrait",
+  },
+  {
+    src: "/images/florence-2026-13.jpeg",
+    alt: "Chase and Lien with the Ponte Vecchio behind them",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/florence-2026-14.jpeg",
+    alt: "The Tribuna room inside the Uffizi Gallery",
+    orientation: "landscape",
+  },
+  {
+    src: "/images/florence-2026-15.jpeg",
+    alt: "Brunelleschi's Dome on the Florence Cathedral",
+    orientation: "landscape",
+  },
+]
 
 const sriLankaPhotos = [
   {
@@ -1535,8 +1606,9 @@ export default function TravelGallery() {
       case "florence-2026":
         return {
           title: "Florence",
-          date: "2026",
-          description: "Photos coming soon.",
+          date: "JUNE 2026",
+          description:
+            "Wine windows, Renaissance masterpieces, and a day trip to hold up Pisa.",
           photos: florencePhotos,
         }
       case "sri-lanka-2025":
@@ -1655,8 +1727,9 @@ export default function TravelGallery() {
       case "florence-2026":
         return {
           title: "Florence",
-          date: "2026",
-          description: "Photos coming soon.",
+          date: "JUNE 2026",
+          description:
+            "Wine windows, Renaissance masterpieces, and a day trip to hold up Pisa.",
           photos: florencePhotos,
         }
       case "sri-lanka-2025":
@@ -1813,6 +1886,50 @@ export default function TravelGallery() {
 
               {/* Overview Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
+                {/* Florence 2026 */}
+                <button onClick={() => navigateToLocation("florence-2026")} className="group text-left">
+                  <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
+                    <Image
+                      src={florencePhotos[carouselIndices["florence-2026"]].src || "/placeholder.svg"}
+                      alt="Florence 2026"
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setCarouselIndices((prev) => ({
+                          ...prev,
+                          "florence-2026":
+                            prev["florence-2026"] === 0
+                              ? florencePhotos.length - 1
+                              : prev["florence-2026"] - 1,
+                        }))
+                      }}
+                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all z-10"
+                      aria-label="Previous photo"
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setCarouselIndices((prev) => ({
+                          ...prev,
+                          "florence-2026": (prev["florence-2026"] + 1) % florencePhotos.length,
+                        }))
+                      }}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all z-10"
+                      aria-label="Next photo"
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                  <h3 className="text-lg font-medium text-foreground group-hover:text-foreground/70 transition-colors">
+                    Florence 2026
+                  </h3>
+                </button>
+
                 {/* Antarctica 2026 */}
                 <button onClick={() => navigateToLocation("antarctica-2026")} className="group text-left">
                   <div className="relative overflow-hidden bg-muted mb-3 aspect-[4/3] rounded-lg">
