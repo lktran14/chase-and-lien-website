@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 
 const locations = [
   { id: "overview", name: "Overview", active: true },
+  { id: "florence-2026", name: "Florence 2026", active: true },
   { id: "antarctica-2026", name: "Antarctica 2026", active: true },
   { id: "buenos-aires-2026", name: "Buenos Aires 2026", active: true },
   { id: "bilbao-2026", name: "Bilbao 2026", active: true },
@@ -530,6 +531,12 @@ const bilbaoPhotos = [
     orientation: "portrait",
   },
 ]
+
+const florencePhotos: {
+  src: string
+  alt: string
+  orientation: "portrait" | "landscape"
+}[] = []
 
 const sriLankaPhotos = [
   {
@@ -1441,6 +1448,7 @@ export default function TravelGallery() {
     "antarctica-2026": 50,
     "buenos-aires-2026": 0,
     "bilbao-2026": 0,
+    "florence-2026": 0,
     "sri-lanka-2025": 0,
     "glastonbury-2025": 0,
     "new-zealand-2025": 0,
@@ -1523,6 +1531,13 @@ export default function TravelGallery() {
           description:
             "Guggenheim galleries, pintxos bars, and the Basque Country good life.",
           photos: bilbaoPhotos,
+        }
+      case "florence-2026":
+        return {
+          title: "Florence",
+          date: "2026",
+          description: "Photos coming soon.",
+          photos: florencePhotos,
         }
       case "sri-lanka-2025":
         return {
@@ -1636,6 +1651,13 @@ export default function TravelGallery() {
           description:
             "Guggenheim galleries, pintxos bars, and the Basque Country good life.",
           photos: bilbaoPhotos,
+        }
+      case "florence-2026":
+        return {
+          title: "Florence",
+          date: "2026",
+          description: "Photos coming soon.",
+          photos: florencePhotos,
         }
       case "sri-lanka-2025":
         return {
